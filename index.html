@@ -1,40 +1,173 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>Introduction to Java!</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/white.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="node_modules/reveal.js-copycode/plugin/copycode/copycode.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown>
+				<textarea data-template>
+					## Introduction to Java Programming
+					<img src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png" alt="Java Logo" width="400"/>											
+					Ramasubramanian Sankar
+					</textarea>
+			</section>
+			<section>
+				<section data-markdown>
+					## History
+					- Developed in **1991** by James Gosling under the name Oak!
+					- Released to public in **1995** by Sun Microsystems
+					- Rest is History!
+					- Java 1.5 released in **September 2004**
+					- Added some advanced features like generics etc
+					- Java 1.8 released in **March 2014**
+					- Added functional programming abstractions and lambdas
+					- Current version is 16 with 17 expected soon
+				</section>
+				<section data-markdown>
+					## My history with Java
+					- Got introduced by a friend in 2003 while doing 3rd year of engineering (Java 1.4)
+					- Generating [FFT butterfly diagram](https://en.wikipedia.org/wiki/Butterfly_diagram) was my first
+					major program
+					- First project in 2004 was Java based at work!
+					- Working from then on-and-off with Java or some other JVM language over past 17 years
+				</section>
+			</section>
+			<section>
+				<section data-markdown>
+					## Features
+					- Platform independent
+						- Write once run anywhere
+					- Automatic memory Management
+						- Garbage Collection
+					- Almost strong and statically typed
+					- Great performance almost comparable to C/C++ in high resource environments
+						- Awesome open source tools like Apache Kafka, Apache Spark, Elasticsearch written in Java
+				</section>
+				<section data-markdown>
+					## Features
+					- Vast ecosystem of battle tested libraries and frameworks
+						- Name anything and you will have a Java library for that!
+					- Embraced by industry and large corporations 
+						- Android supports Java as the primary language due to its popularity
+					- Extremely popular
+						- Always in top 3 of TIOBE programing languages index after 26 years
+				</section>				
+				<section data-markdown>
+					## Features
+					- Object Oriented with some functional flavour (added in 1.8)					
+				</section>				
+			</section>
+			<section>
+				<section data-markdown>
+					### Your first Java Program
+					```Java
+					public class FirstClass {
+						public int add(int a, int b) {
+							return a + b;
+						}
+
+						public static void main(String[] args) {
+							System.out.println(new FirstClass().add(3,4));
+						}
+					}
+					```
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers="1|6-9|2-4">
+public class FirstClass {
+	public int add(int a, int b) {
+		return a + b;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(new FirstClass().add(3,4));
+	}
+}
+					</code></pre>
+				</section>
+			</section>			
+			<section>
+				<section data-markdown>
+					## Platform independent
+					- Java code can run on any OS (Mac, Windows, Linux etc)
+					- Java code compiled to bytecode 
+					- Bytecode is platform independent and can run on OS specific virtual machine
+					- JVM -> Engineering masterpiece (evolved over 2+ decades)
+					- Bytecode interpreter is OS specific i.e. JVM
+					- .java file -> .class file -> .class file executed by JVM
+				</section>
+				<section data-markdown>
+					## Platform independent
+					- Bytecode has its own set of instructions like x86 or ARM
+					- Example
+					
+					```java
+					public class FirstClass {
+						public FirstClass();
+						  Code:
+							 0: aload_0
+							 1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+							 4: return
+					  
+						public int add(int, int);
+						  Code:
+							 0: iload_1
+							 1: iload_2
+							 2: iadd
+							 3: ireturn
+					  
+						public static void main(java.lang.String[]);
+						  Code:
+							 0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+							 3: new           #3                  // class FirstClass
+							 6: dup
+							 7: invokespecial #4                  // Method "<init>":()V
+							10: iconst_3
+							11: iconst_4
+							12: invokevirtual #5                  // Method add:(II)I
+							15: invokevirtual #6                  // Method java/io/PrintStream.println:(I)V
+							18: return
+					  }
+					```
+				</section>				
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+	<script src="node_modules/reveal.js-copycode/plugin/copycode/copycode.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			slideNumber: true,
+			progress: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, CopyCode]
+		});
+	</script>
+</body>
+
 </html>
