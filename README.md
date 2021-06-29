@@ -1,3 +1,23 @@
+## Steps to run the presentation
+
+This project uses and is cloned from [revealjs.com](https://revealjs.com) to generate the presentations from HTML, Markdown and JS. Please jump to the reveal JS section below if you want to know more.
+
+- Clone the repository 
+- Change to `master` branch
+- Change to project root and type below commands
+```bash
+npm install 
+```
+- Then to run the presentation use below command
+```bash
+npm start
+```
+- Access the [URL](http://localhost:8000) to see the presentation, use arrow keys for navigation 
+
+--- 
+
+# Reveal JS
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text.svg" alt="reveal.js" width="450">
